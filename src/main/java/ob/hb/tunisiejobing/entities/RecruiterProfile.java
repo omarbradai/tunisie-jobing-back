@@ -19,7 +19,7 @@ public class RecruiterProfile {
     String description;
 
     @OneToMany(mappedBy = "recruiterProfile")
-    private List<Service> services;
+    private List<TjService> tjServices;
 
     @OneToOne(mappedBy = "recruiterProfile")
     private User user;

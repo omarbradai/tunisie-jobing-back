@@ -11,7 +11,7 @@ public class ServiceRequest {
 
     @ManyToOne
     @JoinColumn(name = "service_id")
-    private Service service;
+    private TjService tjService;
 
     @ManyToOne
     @JoinColumn(name = "jobeur_profile_id")

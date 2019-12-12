@@ -20,5 +20,5 @@ public class Category implements Serializable {
     @Column
     private String description;
     @OneToMany(mappedBy = "category")
-    private List<Service> services;
+    private List<TjService> tjServices;
 }

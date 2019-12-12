@@ -1,6 +1,6 @@
 package ob.hb.tunisiejobing.rest;
 
-import ob.hb.tunisiejobing.dao.UserRepository;
+import ob.hb.tunisiejobing.dao.IUserRepository;
 import ob.hb.tunisiejobing.entities.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,10 +12,10 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
 
-    private UserRepository userRepositoty;
+    private IUserRepository userRepositoty;
 
-    public UserController(UserRepository userRepository) {
-        this.userRepositoty = userRepository;
+    public UserController(IUserRepository IUserRepository) {
+        this.userRepositoty = IUserRepository;
     }
 
     @GetMapping
