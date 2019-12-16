@@ -2,9 +2,8 @@ package ob.hb.tunisiejobing.rest;
 
 import ob.hb.tunisiejobing.dto.TjServiceDto;
 import ob.hb.tunisiejobing.entities.TjService;
-import ob.hb.tunisiejobing.mapper.DtoEntityMapper;
+import ob.hb.tunisiejobing.utils.DtoEntityMapper;
 import ob.hb.tunisiejobing.service.IServiceService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("services")
-public class ServiceController {
+public class ServiceController implements Resource<TjService, TjServiceDto> {
 
     @Autowired
     private IServiceService serviceService;
@@ -23,8 +22,9 @@ public class ServiceController {
 
 
     @GetMapping
-    public List<TjServiceDto> getServices() {
+    public ResponseEntity<List<TjServiceDto>> getServices() {
         List<TjService> services = this.serviceService.findAll();
-        return DtoEntityMapper.convertToDtos(services, TjServiceDto.class);
+
+        return response(services, TjServiceDto.class);
     }
 }

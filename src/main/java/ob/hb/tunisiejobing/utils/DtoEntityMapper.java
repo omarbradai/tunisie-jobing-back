@@ -1,4 +1,4 @@
-package ob.hb.tunisiejobing.mapper;
+package ob.hb.tunisiejobing.utils;
 
 import org.modelmapper.ModelMapper;
 
