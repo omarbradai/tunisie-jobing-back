@@ -6,10 +6,7 @@ import ob.hb.tunisiejobing.utils.DtoEntityMapper;
 import ob.hb.tunisiejobing.service.IServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,5 +25,10 @@ public class ServiceController implements Resource<TjService, TjServiceDto> {
         List<TjService> services = this.serviceService.findAll();
 
         return response(services, TjServiceDto.class);
+    }
+
+    @PostMapping
+    public ResponseEntity<TjServiceDto> postTjService(TjService tjService) {
+
     }
 }

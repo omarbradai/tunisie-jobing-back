@@ -19,6 +19,12 @@ public class TjService {
     private String name;
     @Column
     private String description;
+    @Column
+    private Integer price;
+    @Column
+    private Integer duration;
+    @Column(name = "duration_type")
+    private String durationType;
     @ManyToOne
     @JoinColumn(name = "recruiter_profile_id", referencedColumnName = "id")
     private RecruiterProfile recruiterProfile;

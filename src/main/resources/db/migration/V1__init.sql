@@ -32,7 +32,6 @@ CREATE TABLE category
   id bigint(20) NOT NULL AUTO_INCREMENT,
   name varchar(20),
   description varchar(255),
-  category_id bigint(20),
   PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;;
 
@@ -42,6 +41,9 @@ CREATE TABLE service
   name varchar(20),
   description varchar(255),
   category_id bigint(20),
+  price int,
+  duration int,
+  duration_type varchar(255),
   recruiter_profile_id bigint(20),
   PRIMARY KEY (id),
   foreign key (recruiter_profile_id) references service (id),
